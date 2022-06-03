@@ -15,7 +15,10 @@ struct ColorUISlider: UIViewRepresentable {
     let slider = UISlider(frame: .zero)
     slider.minimumValue = 0
     slider.maximumValue = 100
-    slider.thumbTintColor = UIColor(red: 1, green: 0, blue: 0, alpha: CGFloat(alphaValue) / 100)
+    slider.thumbTintColor = UIColor(red: 1,
+                                    green: 0,
+                                    blue: 0,
+                                    alpha: CGFloat(alphaValue) / 100)
     slider.addTarget(context.coordinator,
                      action: #selector(Coordinator.valueChanged),
                      for: .valueChanged
@@ -26,6 +29,10 @@ struct ColorUISlider: UIViewRepresentable {
   
   func updateUIView(_ uiView: UISlider, context: Context) {
     uiView.value = Float(value)
+    uiView.thumbTintColor = UIColor(red: 1,
+                                    green: 0,
+                                    blue: 0,
+                                    alpha: CGFloat(alphaValue) / 100)
   }
   
   func makeCoordinator() -> Coordinator {
